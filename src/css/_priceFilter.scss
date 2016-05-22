@@ -1,0 +1,18 @@
+#priceFilter {
+  margin-top: 10px;
+  padding: 20px;
+
+  .rc-slider {
+    margin: 10px auto;
+  }
+
+  .rc-slider-track {
+    background-color: $tertiary;
+  }
+
+  .rc-slider-handle {
+    border-color: $tertiary;
+  }
+
+  i.fa-gbp {margin-right: 2px}
+}

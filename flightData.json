@@ -1,0 +1,84 @@
+{"data":
+  [
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-202",
+      "date": "25/05/2016",
+      "from": "PNQ",
+      "to": "DEL",
+      "depart": "10:00 AM",
+      "arrive": "12:00 PM",
+      "price": "125.00"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-202",
+      "date": "25/05/2016",
+      "from": "PNQ",
+      "to": "DEL",
+      "depart": "10:00 AM",
+      "arrive": "12:00 PM",
+      "price": "135.00"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-202",
+      "date": "25/05/2016",
+      "from": "PNQ",
+      "to": "DEL",
+      "depart": "03:00 AM",
+      "arrive": "04:00 PM",
+      "price": "115.50"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-202",
+      "date": "25/05/2016",
+      "from": "PNQ",
+      "to": "DEL",
+      "depart": "10:00 AM",
+      "arrive": "12:00 PM",
+      "price": "125.00"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-203",
+      "date": "29/05/2016",
+      "from": "DEL",
+      "to": "PNQ",
+      "depart": "03:45 AM",
+      "arrive": "06:20 PM",
+      "price": "95.00"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "AI-203",
+      "date": "29/05/2016",
+      "from": "DEL",
+      "to": "PNQ",
+      "depart": "05:50 AM",
+      "arrive": "12:40 PM",
+      "price": "25.50"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "BC-991",
+      "date": "25/05/2016",
+      "from": "CDF",
+      "to": "MQC",
+      "depart": "12:05 AM",
+      "arrive": "15:30 PM",
+      "price": "225.00"
+    },
+    {
+      "img": "./assets/placeholder.png",
+      "flightNo": "BC-990",
+      "date": "27/05/2016",
+      "from": "MQC",
+      "to": "CDF",
+      "depart": "10:00 AM",
+      "arrive": "12:00 PM",
+      "price": "205.00"
+    }
+  ]
+}

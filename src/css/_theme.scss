@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+
+/* 1st = primary, 2nd = secondary, 3rd = tertiary, 
+4th = quaternary, 5th = quinary, 6th = senary*/
+$primary: #383d44;
+$secondary: #6b7e91;
+$tertiary: #5e9ca9;
+$quaternary: #dda611;
+$quinary: #d3dcd6;
+$senary: #ed7d57;
+body {
+  @include prefixer(box-sizing, border-box, webkit moz spec);
+  box-sizing: border-box;
+
+  @include prefixer(background-size, cover, webkit moz spec);
+  background-size: cover;
+  background: url(/assets/bg.jpg) no-repeat center center fixed;
+  font-family: 'Lato', sans-serif;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 0.85em;
+  border: 0px;
+  &:focus{
+    outline: none;
+  };
+}
+
+.fa {margin-right: 5px;}
+.fa.fa-plane {
+  &.arrive {
+    transform: rotate(90deg)
+  }
+  &.to {
+    transform: rotate(45deg);
+    margin-left: 8px;
+    margin-right: 10px;
+  }
+}
+
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,15%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,20%);
+  } 
+}
+
+.btn {
+  text-decoration:none;
+  padding:5px 10px;
+  border-radius: 2px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  white-space: normal;
+
+  &:focus{
+    outline: none;
+  };
+
+  &.primary {
+    @include button-bg($quaternary);
+    color: $quinary;
+  }
+}
+
+.panel {
+  background-color: $primary;
+  color: $quaternary;
+  box-shadow: 0px 5px 10px -2px rgba(0,0,0,0.75);
+}
+
+.small {
+  font-size: 0.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+
