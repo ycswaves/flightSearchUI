@@ -5,8 +5,18 @@
     padding: 20px;
     margin: 0px;
   }
-}
 
+  @include media($mobile) {
+    .cover {
+      display: none;
+    }
+    .flight, .price {
+      @include span-columns(6);
+      @include omega;
+      padding: 10px;
+    } 
+  }
+}
 
 .card {
   background-color: $primary;

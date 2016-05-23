@@ -1,20 +1,21 @@
-jest.unmock('../src/js/components/SearchPanel.js');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import SearchPanel from '../src/js/components/SearchPanel.js';
-import {data as FlightData} from "../flightData.json";
 import Moment from "moment";
+jest.unmock('../src/js/components/SearchPanel.js');
+jest.unmock('moment');
 
 describe('SearchPanel Test', () => {
-  let panel, panelDOM;
+  let panel, resHandle;
 
   beforeEach(() => {
-    panel = TestUtils.renderIntoDocument(<SearchPanel />);
+    resHandle = jest.genMockFunction();
+    panel = TestUtils.renderIntoDocument(<SearchPanel resultHandler={resHandle}/>);
   });
 
   it('should exist', () => {
-    expect(TestUtils.isCompositeComponent(panel)).toBe(true);    
+    expect(TestUtils.isCompositeComponent(panel)).toBe(true);
   });
 
   it('should able to toggle b/t one-way and round-trip', () => {
@@ -29,6 +30,12 @@ describe('SearchPanel Test', () => {
 
     TestUtils.Simulate.click(twoWayTab);
     expect(panel.state.isTwoWayTrip).toBe(true);
+  });
+
+  it('should able to search', () => {
+    const submit = TestUtils.scryRenderedDOMComponentsWithTag(panel, 'button');
+    TestUtils.Simulate.click(submit[0]);
+    expect(resHandle).toBeCalled();
   });
 
 });

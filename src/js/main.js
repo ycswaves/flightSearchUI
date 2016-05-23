@@ -45,12 +45,12 @@ class Main extends React.Component {
   }
   
   render() {
-    const {result, filterMin, filterMax, depDay, retDay} = this.state;
+    const {result, filterMin, filterMax, depDay, retDay, maxPrice, minPrice} = this.state;
     return (
       <div class="container">
         <div id="main" class="col-3">
           <SearchPanel resultHandler={this.updateResult.bind(this)} />
-          <PriceSlider max={this.state.maxPrice} min={this.state.minPrice} priceRangeHandler={this.refinePrice.bind(this)}/>
+          <PriceSlider max={maxPrice} min={minPrice} priceRangeHandler={this.refinePrice.bind(this)}/>
 
         </div>
         <div class="col-9">

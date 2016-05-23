@@ -15,8 +15,6 @@ export default class ResultPanel extends React.Component {
       return {pWhole, pDec};
   }
 
-
-
   render() {
     let {result, filter, depDay, retDay} = this.props;
     let cards, searchDate, isTwoWay = false;

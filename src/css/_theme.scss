@@ -30,9 +30,6 @@ input, select {
 
 .fa {margin-right: 5px;}
 .fa.fa-plane {
-  &.arrive {
-    transform: rotate(90deg)
-  }
   &.to {
     transform: rotate(45deg);
     margin-left: 8px;

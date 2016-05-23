@@ -58,7 +58,7 @@ export default class SearchPanel extends React.Component {
     let res = []
       , depFlights = []
       , retFlights = []
-      , minPrice = 0
+      , minPrice = Number.POSITIVE_INFINITY
       , maxPrice = 0;
 
     const {from, to, depDay, retDay} = this.state;

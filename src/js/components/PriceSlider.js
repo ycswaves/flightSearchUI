@@ -24,7 +24,7 @@ export default class priceSlider extends React.Component {
       <div id="priceFilter" class="panel">
         <label>Refine Flight Search</label>
           <Rcslider range={true} min={min} max={max} defaultValue={[min, max]} onAfterChange={this.filterPrice.bind(this)} />
-          <div>
+          <div class="clearfix">
             <span class="pull-left"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.min}</span>
             <span class="pull-right"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.max}</span>
           </div>

@@ -1,4 +1,4 @@
-$mobile: new-breakpoint(max-width 960px 3);
+$mobile: new-breakpoint(max-width 960px, 12);
 
 .container {
   @include outer-container;
@@ -14,16 +14,14 @@ $mobile: new-breakpoint(max-width 960px 3);
   .col-3 {
     @include span-columns(3);
     @include media($mobile) {
-      @include span-columns(3);
-      margin: 10px;
+      @include span-columns(12);
     }
   }
 
   .col-4 {
     @include span-columns(4);
     @include media($mobile) {
-      @include span-columns(3);
-      margin: 10px;
+      @include span-columns(12);
     }
   }
 
@@ -46,8 +44,7 @@ $mobile: new-breakpoint(max-width 960px 3);
   .col-9 {
     @include span-columns(9);
     @include media($mobile) {
-      @include span-columns(3);
-      margin:10px;
+      @include span-columns(12);
     }
   }
 
@@ -62,4 +59,8 @@ $mobile: new-breakpoint(max-width 960px 3);
   .col-12 {
     @include span-columns(12);
   }
+}
+
+.clearfix {
+  @include clearfix;
 }
