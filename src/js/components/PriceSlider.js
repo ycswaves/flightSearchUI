@@ -2,16 +2,20 @@ import React from "react";
 import Rcslider from "rc-slider";
 
 export default class priceSlider extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      max: 0,
-      min: 0
+      max: props.max,
+      min: props.min
     };
   }
 
   filterPrice(rangeArr) {
-    this.props.priceRangeHandler(rangeArr[0], rangeArr[1]);
+    this.props.onSlide({
+      minPrice: rangeArr[0], 
+      maxPrice: rangeArr[1]
+    });
+
     this.setState({
       min: rangeArr[0],
       max: rangeArr[1]
@@ -23,7 +27,7 @@ export default class priceSlider extends React.Component {
     return (
       <div id="priceFilter" class="panel">
         <label>Refine Flight Search</label>
-          <Rcslider range={true} min={min} max={max} defaultValue={[min, max]} onAfterChange={this.filterPrice.bind(this)} />
+          <Rcslider range min={min} max={max} defaultValue={[min, max]} onAfterChange={this.filterPrice.bind(this)} />
           <div class="clearfix">
             <span class="pull-left"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.min}</span>
             <span class="pull-right"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.max}</span>

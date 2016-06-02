@@ -20,7 +20,7 @@ export default class ResultPanel extends React.Component {
     let cards, searchDate, isTwoWay = false;
     depDay = Moment(depDay).format('Do MMMM YYYY');
 
-    if (retDay !== undefined) {
+    if (result.length > 0 && result[0].returnFlight !== undefined) {
       isTwoWay = true;
       retDay = Moment(retDay).format('Do MMMM YYYY');
       searchDate = (
@@ -37,19 +37,23 @@ export default class ResultPanel extends React.Component {
       )
     }
 
-    result = result.filter((obj) => { // filter out non-qualified flights
-      let price;
-      if (obj['returnFlight'] !== undefined) {
-        price = parseFloat(obj.returnFlight.price) + parseFloat(obj.departFlight.price);
-      } else {
-        price = parseFloat(obj.price);
-      }
-      return (price >= filter.minPrice && price <= filter.maxPrice);
-    });
+    console.log(filter);
+
+    if(filter.minPrice !== undefined) {
+      result = result.filter((obj) => { // filter out non-qualified flights
+        let price;
+        if (obj['returnFlight'] !== undefined) {
+          price = parseFloat(obj.returnFlight.price) + parseFloat(obj.departFlight.price);
+        } else {
+          price = parseFloat(obj.price);
+        }
+        return (price >= filter.minPrice && price <= filter.maxPrice);
+      });
+    }
 
     if (result.length <= 0) {
       cards = <div class="card container" style={{padding: '20px'}}>No result found</div>
-    } else {
+    } else {      
       cards = result.map((obj, i) => {
         if (isTwoWay) {
           let totalPrice = parseFloat(obj.departFlight.price) + parseFloat(obj.returnFlight.price);
