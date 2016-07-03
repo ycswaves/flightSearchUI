@@ -4,7 +4,6 @@ import PriceSlider from '../components/PriceSlider.js'
 import DEFAULT_STATE from '../reducers/defaults.js'
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     min: state.searchResult.minPrice,
     max: state.searchResult.maxPrice

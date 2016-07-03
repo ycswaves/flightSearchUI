@@ -21,7 +21,7 @@ const getSearchResult = (query) => {
 
 const getOneWayFlight = (data, query) => {
   const {from, to, depDay} = query;
-  const depDayFmt = Moment(depDay).format(DATE_FORMAT);
+  const depDayFmt = Moment(depDay, DATE_FORMAT).format(DATE_FORMAT);
 
   let res = []
     , minPrice = 0
@@ -49,8 +49,8 @@ const getTwoWayFlight = (data, query) => {
     , maxPrice = 0;
 
   const {from, to, depDay, retDay} = query;
-  const depDayFmt = Moment(depDay).format(DATE_FORMAT);
-  const retDayFmt = Moment(retDay).format(DATE_FORMAT);
+  const depDayFmt = Moment(depDay, DATE_FORMAT).format(DATE_FORMAT);
+  const retDayFmt = Moment(retDay, DATE_FORMAT).format(DATE_FORMAT);
 
   data.forEach((obj) => {
     if (obj.from === from && obj.to === to && obj.date === depDayFmt) {

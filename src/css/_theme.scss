@@ -13,8 +13,9 @@ body {
   box-sizing: border-box;
 
   @include prefixer(background-size, cover, webkit moz spec);
-  background-size: cover;
   background: url(/assets/bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+  
   font-family: 'Lato', sans-serif;
 }
 

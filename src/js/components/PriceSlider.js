@@ -24,13 +24,14 @@ export default class priceSlider extends React.Component {
 
   render() {
     const {min, max} = this.props;
+    let stateOrProp = (this.state.min === 0 && this.state.max === 0)? 'props' : 'state'; 
     return (
       <div id="priceFilter" class="panel">
         <label>Refine Flight Search</label>
           <Rcslider range min={min} max={max} defaultValue={[min, max]} onAfterChange={this.filterPrice.bind(this)} />
           <div class="clearfix">
-            <span class="pull-left"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.min}</span>
-            <span class="pull-right"><i class="fa fa-gbp" aria-hidden="true"></i>{this.state.max}</span>
+            <span class="pull-left"><i class="fa fa-gbp" aria-hidden="true"></i>{this[stateOrProp].min}</span>
+            <span class="pull-right"><i class="fa fa-gbp" aria-hidden="true"></i>{this[stateOrProp].max}</span>
           </div>
       </div>
     )
